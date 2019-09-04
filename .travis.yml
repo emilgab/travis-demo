@@ -5,7 +5,16 @@ language: bash
 
 git:
   # defines the depth of the github rep
+  # when false it does not take everything from the repo
+  # you want to define how much it should take, can be defined as how many depths.
   depth: false
+  
+before_cache:
+  - brew cleanup
+  
+cache:
+  - directories:
+    - $HOME/Library/Caches/Homebrew
   
 install:
   # to show that we can run commands
